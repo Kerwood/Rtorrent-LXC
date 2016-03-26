@@ -42,7 +42,6 @@ docker run --name rtorrent -v /home/kerwood/Downloads:/downloads -v /home/kerwoo
 ```
 
 
-Patrick Kerwood @ [https://LinuxBloggen.dk](https://LinuxBloggen.dk)
-
+Patrick Kerwood @ [https://LinuxBloggen.dk](https://LinuxBloggen.dk)  
 Fork it at Github [https://github.com/Kerwood/Rtorrent-LXC](https://github.com/Kerwood/Rtorrent-LXC)
 
