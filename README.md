@@ -30,7 +30,7 @@ By default rtorrent uses port 51001-51001. You can change these ports with the `
 ```
 docker run --name rtorrent -v /home/kerwood/Downloads:/downloads -e RTORRENT_PORT=52002-52002 -p 8181:80 -p 52002:52002 -d kerwood/rtorrent-lxc
 ```
-** Authentication**
+**Authentication**
 To get authentication use `HTUSER` and `HTPASS`.
 ```
 docker run --name rtorrent -v /home/kerwood/Downloads:/downloads -e HTUSER=Admin -e HTPASS=Passw0rd -p 8181:80 -p 51001:51001 -d kerwood/rtorrent-lxc
@@ -43,5 +43,6 @@ docker run --name rtorrent -v /home/kerwood/Downloads:/downloads -v /home/kerwoo
 
 
 Patrick Kerwood @ [https://LinuxBloggen.dk](https://LinuxBloggen.dk)
+
 Fork it at Github [https://github.com/Kerwood/Rtorrent-LXC](https://github.com/Kerwood/Rtorrent-LXC)
 
