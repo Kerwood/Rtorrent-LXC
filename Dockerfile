@@ -60,6 +60,9 @@ COPY rtorrent.rc /home/rtorrent/.rtorrent.rc
 COPY plugins/ /var/www/html/plugins/
 COPY startup.sh /
 
+RUN cd /var/www/html/plugins/theme/themes \
+	&& sh -c "$(curl -fsSL https://raw.githubusercontent.com/exetico/FlatUI/master/install.sh)"
+
 RUN chown -R www-data.www-data /var/www/html \
 	&& chown rtorrent.rtorrent /home/rtorrent/.rtorrent.rc /home/rtorrent/.rtorrent-session /downloads /watch
 

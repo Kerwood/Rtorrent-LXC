@@ -19,6 +19,7 @@ Rutorrent comes with 16 of my favorite plugins.
  - Theme Plugin v3.6
  - Throttle Plugin v3.6
  - Track Lables Plugin v3.6
+ - FlatUI Themes by [exetico](https://github.com/exetico/FlatUI)
 
 ### Usage
 Simply run
