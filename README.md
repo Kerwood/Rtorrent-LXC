@@ -62,6 +62,19 @@ docker run --name rtorrent \
     -d kerwood/rtorrent-lxc
 ```
 
+**Consistent torrents**
+If you want to make your torrents consistent (being able to create a new container with the same torrents), just mount the volume `/home/rtorrent/rtorrent-session`
+Be sure to make the session directory on the host writable by uid/gid 1000 or by everyone. If rtorrent cannot write to the folder, rtorrent will not start.
+When ever you recreate a new container with existing session files, make sure to delete `rtorrent.lock` in the host session directory before running the new one. Or else rtorrent will fail to start.
+```
+docker run --name rtorrent \
+    -v /home/kerwood/Downloads:/downloads \
+    -v /home/kerwood/rtorrent-sessions:/home/rtorrent/rtorrent-session \
+    -p 8181:80 \
+    -p 51001:51001 \
+    -d kerwood/rtorrent-lxc
+```
+
 
 Patrick Kerwood @ [https://LinuxBloggen.dk](https://LinuxBloggen.dk)  
 Fork it at Github [https://github.com/Kerwood/Rtorrent-LXC](https://github.com/Kerwood/Rtorrent-LXC)
