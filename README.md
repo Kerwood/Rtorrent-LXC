@@ -31,6 +31,7 @@ docker run --name rtorrent \
     -d kerwood/rtorrent-lxc
 ```
 **Change rtorrent port**
+
 By default rtorrent uses port 51001-51001. You can change these ports with the `RTORRENT_PORT` environmental variable. Remember to publish the port(s) to. And yes, even if you specify only one port, you will have to write it as it was a range, 52002-52002. You can specify a range of ports, but its recommended to only use one. And remember that Docker will make as many iptables entries as there are ports in the range.
 ```
 docker run --name rtorrent \
@@ -41,6 +42,7 @@ docker run --name rtorrent \
     -d kerwood/rtorrent-lxc
 ```
 **Authentication**
+
 To get authentication use `HTUSER` and `HTPASS`.
 ```
 docker run --name rtorrent \
@@ -52,6 +54,7 @@ docker run --name rtorrent \
     -d kerwood/rtorrent-lxc
 ```
 **Rtorrent watch folder**
+
 Rtorrent has a cool feature where it watches a folder for torrent files and starts them automatically. Just mount the volume `/watch`
 ```
 docker run --name rtorrent \
@@ -63,6 +66,7 @@ docker run --name rtorrent \
 ```
 
 **Consistent torrents**
+
 If you want to make your torrents consistent (being able to create a new container with the same torrents), just mount the volume `/home/rtorrent/rtorrent-session`
 Be sure to make the session directory on the host writable by uid/gid 1000 or by everyone. If rtorrent cannot write to the folder, rtorrent will not start.
 When ever you recreate a new container with existing session files, make sure to delete `rtorrent.lock` in the host session directory before running the new one. Or else rtorrent will fail to start.
