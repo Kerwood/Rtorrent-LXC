@@ -41,7 +41,7 @@ RUN cd /tmp \
 	&& make install \
 	&& cd .. \
 	&& ldconfig \
-	&& mkdir /home/rtorrent/.rtorrent-session \
+	&& mkdir /home/rtorrent/rtorrent-session \
 	&& mkdir /downloads \
 	&& mkdir /watch
 
@@ -64,11 +64,8 @@ RUN cd /var/www/html/plugins/theme/themes \
 	&& sh -c "$(curl -fsSL https://raw.githubusercontent.com/exetico/FlatUI/master/install.sh)"
 
 RUN chown -R www-data.www-data /var/www/html \
-	&& chown rtorrent.rtorrent /home/rtorrent/.rtorrent.rc /home/rtorrent/.rtorrent-session /downloads /watch
+	&& chown rtorrent.rtorrent /home/rtorrent/.rtorrent.rc /home/rtorrent/rtorrent-session /downloads /watch
 
 VOLUME ["/downloads", "/watch"]
 
 ENTRYPOINT ["/startup.sh"]
-
-
-
