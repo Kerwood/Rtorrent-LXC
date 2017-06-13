@@ -1,5 +1,9 @@
 # Rtorrent + Rutorrent
  - `0.9.6`, `latest`
+ 
+ **Update Jun 13 2017**  
+ The container now removes the `apache.pid` file and the `rtorrent.lock` upon startup.  
+ Should fix some issues when restarting the container.
 
 This is a container running Rtorrent with Rutorrent as WebUI.
 Rutorrent comes with 16 of my favorite plugins.
